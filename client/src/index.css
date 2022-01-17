@@ -1,0 +1,221 @@
+body,
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
+  font-size: 20px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15rem;
+}
+
+.login-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.login-left {
+  border-right: 1px solid black;
+}
+
+.login-left > img {
+  width: 250px;
+  height: 250px;
+  margin-right: 2.5rem;
+}
+
+.login-right {
+  margin-left: 2.5rem;
+}
+
+.login-right-bottom > div > button {
+  width: 100%;
+  border-radius: 0px;
+  margin-bottom: 1rem;
+}
+
+.login-right-bottom > div {
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 2.5%;
+}
+
+.header-right {
+  margin-right: 2.5%;
+}
+
+.header-left > img {
+  width: 100px;
+  height: 100px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.profile > div > h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-buttons > div > button {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-radius: 0px;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.add-header > h2 {
+  font-size: 1.5rem;
+}
+
+.add-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid black;
+}
+
+.add-form > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.add-form > div > div {
+  width: 30%;
+}
+
+.add-form > div > input {
+  width: 90%;
+}
+
+.add-buttons > div {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-buttons > div > button {
+  width: 100%;
+  border-radius: 0px;
+}
+
+.home {
+  margin-top: 2.5rem;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  margin-bottom: 2.5rem;
+}
+
+.home-header > div > p {
+  font-size: 1.5rem;
+}
+
+.home-header > div > button {
+  border-radius: 0px !important;
+  margin-bottom: 1rem;
+}
+
+.single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.single-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.single-right {
+  margin-right: 1rem;
+  text-align: right;
+}
+
+.single-left > img {
+  width: 40%;
+}
+
+.participants {
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+td {
+  padding: 1rem;
+  border-right: 1px solid black;
+}
+
+td:last-child {
+  border-right: none;
+}
+
+table {
+  margin-bottom: 2rem;
+}
+
+.participants-form {
+  display: flex;
+}
+
+.participants-form > button {
+  border-radius: 0px;
+}
+
+.bracket > h2 {
+  text-align: center;
+}
+
+.tournament-header {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.tournament-header-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
