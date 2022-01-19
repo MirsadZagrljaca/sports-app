@@ -122,12 +122,12 @@ export default function Settings({ tournament, setTournament, participants }) {
     }
 
     if (
-      (values.numberOfParticipants !== 0 && values.numberOfParticipants < 0) ||
-      values.numberOfParticipants > 64
+      (values.numberOfParticipants !== 0 && values.numberOfParticipants < 1) ||
+      values.numberOfParticipants > 65
     ) {
       return setValues({
         ...values,
-        error: "Number of participants should be between 16 and 42",
+        error: "Number of participants should be more then 1 and less then 65",
       });
     }
 

@@ -145,10 +145,10 @@ export default function AddTournament() {
       return setValues({ ...values, error: "Please Fill All Input Fields!" });
     }
 
-    if (values.numberOfParticipants < 16 || values.numberOfParticipants > 42) {
+    if (values.numberOfParticipants < 1 || values.numberOfParticipants > 65) {
       return setValues({
         ...values,
-        error: "Number of participants should be between 16 and 42",
+        error: "Number of participants should be more then 1 and less then 65",
       });
     }
 
