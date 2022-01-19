@@ -13,10 +13,16 @@ export default function SingleTournament() {
   const [participants, setParticipants] = useState([]);
   const { uniqueId } = useParams();
   const [menu, setMenu] = useState("participants");
+  const [host, setHost] = useState("");
 
   useEffect(async () => {
+    if (!sessionStorage.getItem("token")) {
+      return window.location.assign("/");
+    }
+
     axios.get(`${base}/cache`).then((res) => {
       setUser(res.data);
+      console.log(res.data);
     });
 
     let response = await axios.get(`${base}/tournamentByUniqueId/${uniqueId}`);
@@ -25,6 +31,7 @@ export default function SingleTournament() {
     } else {
       setParticipants(response.data[0].participants);
       setTournament(response.data[0]);
+      setHost(response.data[0].host);
     }
   }, []);
 
@@ -106,15 +113,17 @@ export default function SingleTournament() {
                     Participants
                   </a>
                 </li>
-                <li className="nav-item">
-                  <a
-                    className="nav-link"
-                    href="#"
-                    onClick={() => setMenu("settings")}
-                  >
-                    Settings
-                  </a>
-                </li>
+                {user._id === tournament.host && (
+                  <li className="nav-item">
+                    <a
+                      className="nav-link"
+                      href="#"
+                      onClick={() => setMenu("settings")}
+                    >
+                      Settings
+                    </a>
+                  </li>
+                )}
               </ul>
             </div>
           </nav>
@@ -134,6 +143,7 @@ export default function SingleTournament() {
             setTournament={setTournament}
             participants={participants}
             setParticipants={setParticipants}
+            host={host}
           />
         )}
 

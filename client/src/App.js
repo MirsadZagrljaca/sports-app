@@ -9,6 +9,7 @@ import Edit from "./components/user/Edit";
 import ChangePassword from "./components/user/ChangePassword";
 import AddTournament from "./components/tournaments/AddTournament";
 import SingleTournament from "./components/tournaments/SingleTournament";
+import MyTournaments from "./components/tournaments/MyTournaments";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/mytournaments" element={<MyTournaments />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/profile/edit" element={<Edit />} />
           <Route path="/profile/password" element={<ChangePassword />} />

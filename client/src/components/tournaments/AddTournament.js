@@ -18,6 +18,10 @@ export default function AddTournament() {
   });
 
   useEffect(async () => {
+    if (!sessionStorage.getItem("token")) {
+      return window.location.assign("/");
+    }
+
     let response = await axios.get(`${base}/cache`);
     setUser(response.data);
   }, []);

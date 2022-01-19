@@ -15,10 +15,59 @@ export default function Settings({ tournament, setTournament, participants }) {
     error: "",
     redirect: false,
   });
+  const [disabled, setDisabled] = useState(false);
 
   useEffect(async () => {
     let response = await axios.get(`${base}/cache`);
     setUser(response.data);
+
+    const dateTime = tournament.time.split("T");
+    const date = dateTime[0].split("-");
+    const time = dateTime[1].split(":");
+
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.getMonth() + 1;
+    const year = now.getFullYear();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+
+    const yearCheck = date[0] - year;
+    const monthCheck = date[1] - month;
+    const dayCheck = date[2] - day;
+    const hoursCheck = time[0] - hours;
+    const minutesCheck = time[1] - minutes;
+
+    if (yearCheck < 0) {
+      return setDisabled(true);
+    }
+
+    if (yearCheck === 0 && monthCheck < 0) {
+      return setDisabled(true);
+    }
+
+    if (yearCheck === 0 && monthCheck === 0 && dayCheck < 0) {
+      return setDisabled(true);
+    }
+
+    if (
+      yearCheck === 0 &&
+      monthCheck === 0 &&
+      dayCheck === 0 &&
+      hoursCheck < 0
+    ) {
+      return setDisabled(true);
+    }
+
+    if (
+      yearCheck === 0 &&
+      monthCheck === 0 &&
+      dayCheck === 0 &&
+      hoursCheck === 0 &&
+      minutesCheck < 0
+    ) {
+      return setDisabled(true);
+    }
   }, []);
 
   const update = () => {
@@ -73,15 +122,16 @@ export default function Settings({ tournament, setTournament, participants }) {
     }
 
     if (
-      values.numberOfParticipants !== 0 &&
-      values.numberOfParticipants < 16 ||
-      values.numberOfParticipants > 42
+      (values.numberOfParticipants !== 0 && values.numberOfParticipants < 0) ||
+      values.numberOfParticipants > 64
     ) {
       return setValues({
         ...values,
         error: "Number of participants should be between 16 and 42",
       });
     }
+
+    setValues({ ...values, error: "" });
 
     let newtournament = {
       name: values.name || tournament.name,
@@ -189,6 +239,7 @@ export default function Settings({ tournament, setTournament, participants }) {
               min={16}
               max={42}
               defaultValue={tournament.numberOfParticipants}
+              disabled={disabled}
               onChange={(e) =>
                 setValues({ ...values, numberOfParticipants: e.target.value })
               }

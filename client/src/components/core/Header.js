@@ -15,7 +15,11 @@ export default function Header() {
 
   return (
     <div className="header">
-      <div className="header-left">
+      <div
+        className="header-left"
+        onClick={() => window.location.assign("/home")}
+        style={{ cursor: "pointer" }}
+      >
         <img src={trophy} alt="login-trophy" />
         <h4>Tournaments</h4>
       </div>
@@ -45,7 +49,7 @@ export default function Header() {
           </a>
 
           <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a className="dropdown-item" href="/home">
+            <a className="dropdown-item" href="/mytournaments">
               My Tournaments
             </a>
             <a className="dropdown-item" href="/profile">

@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import base from "../../config";
-import Header from "./Header";
+import Header from "../core/Header";
 import { Button } from "react-bootstrap";
 import image from "../assets/image.jpeg";
 
-export default function Home() {
+export default function MyTournaments() {
   const [user, setUser] = useState({});
   const [tournaments, setTournaments] = useState([]);
 
@@ -17,7 +17,7 @@ export default function Home() {
     let response = await axios.get(`${base}/cache`);
     setUser(response.data);
 
-    axios.get(`${base}/tournament`).then((res) => {
+    axios.get(`${base}/api/tournament/${response.data._id}`).then((res) => {
       if (res.data.err) {
         return console.log(res.data.err);
       }
@@ -33,7 +33,7 @@ export default function Home() {
         <div>
           <div className="home-header">
             <div className="home-header-left">
-              <p>All Tournaments</p>
+              <p>Your Tournaments</p>
             </div>
 
             <div className="home-header-right">

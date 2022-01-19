@@ -71,7 +71,6 @@ const remove = (req, res, next) => {
 const tournamentByUniqueId = (req, res, next, id) => {
   tournamentModel
     .find({ uniqueId: id })
-    .populate("host")
     .exec((err, tournament) => {
       if (err || !tournament) {
         return res.json({ error: "Tournament not found" });
