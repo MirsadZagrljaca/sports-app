@@ -16,6 +16,7 @@ export default function AddTournament() {
     error: "",
     redirect: false,
   });
+  const [tournaments, setTournaments] = useState([]);
 
   useEffect(async () => {
     if (!sessionStorage.getItem("token")) {
@@ -24,6 +25,13 @@ export default function AddTournament() {
 
     let response = await axios.get(`${base}/cache`);
     setUser(response.data);
+
+    axios.get(`${base}/tournament`).then((res) => {
+      if (res.data.err) {
+        return console.log(res.data.err);
+      }
+      setTournaments(res.data);
+    });
   }, []);
 
   const generate = () => {
@@ -150,6 +158,18 @@ export default function AddTournament() {
         ...values,
         error: "Number of participants should be more then 2 and less then 65",
       });
+    }
+
+    let counter = 0;
+
+    for (let i = 0; i < tournaments.length; i++) {
+      if (values.uniqueId === tournaments[i].uniqueId) {
+        counter++;
+      }
+    }
+
+    if (counter > 0) {
+      return setValues({ ...values, error: "That Url is taken already" });
     }
 
     let newtournament = {
@@ -279,8 +299,8 @@ export default function AddTournament() {
               <input
                 type="number"
                 className="form-control"
-                min={16}
-                max={42}
+                min={3}
+                max={64}
                 onChange={(e) =>
                   setValues({ ...values, numberOfParticipants: e.target.value })
                 }
