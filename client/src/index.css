@@ -331,3 +331,56 @@ table {
 .bracket-single_63 {
   margin-bottom: 1.5rem;
 }
+
+.bi-arrow-right_1 ,
+.bi-arrow-right_3 ,
+.bi-arrow-right_5 ,
+.bi-arrow-right_7 ,
+.bi-arrow-right_9 ,
+.bi-arrow-right_11 ,
+.bi-arrow-right_13 ,
+.bi-arrow-right_15 ,
+.bi-arrow-right_17 ,
+.bi-arrow-right_19 ,
+.bi-arrow-right_21,
+.bi-arrow-right_23 ,
+.bi-arrow-right_25 ,
+.bi-arrow-right_27 ,
+.bi-arrow-right_29 ,
+.bi-arrow-right_31 ,
+.bi-arrow-right_33 ,
+.bi-arrow-right_35 ,
+.bi-arrow-right_37 ,
+.bi-arrow-right_39 ,
+.bi-arrow-right_41 ,
+.bi-arrow-right_43 ,
+.bi-arrow-right_45,
+.bi-arrow-right_47 ,
+.bi-arrow-right_49 ,
+.bi-arrow-right_51 ,
+.bi-arrow-right_53 ,
+.bi-arrow-right_55 ,
+.bi-arrow-right_57 ,
+.bi-arrow-right_59 ,
+.bi-arrow-right_61 ,
+.bi-arrow-right_63  {
+  display: none !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .collapse navbar-collapse {
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .navbar-expand-lg,
+  .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto !important;
+  }
+
+  ul {
+    display: flex !important;
+    margin-left: 45%;
+  }
+}

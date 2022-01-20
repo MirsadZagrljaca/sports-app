@@ -432,7 +432,9 @@ export default function TournamentBracket({
     let first = firstRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -446,7 +448,9 @@ export default function TournamentBracket({
     let first = secondRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -460,7 +464,9 @@ export default function TournamentBracket({
     let first = thirdRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -474,7 +480,9 @@ export default function TournamentBracket({
     let first = fourthRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -488,7 +496,9 @@ export default function TournamentBracket({
     let first = fifthRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -502,7 +512,9 @@ export default function TournamentBracket({
     let first = sixthRound;
 
     for (let i = 0; i < first.length; i++) {
-      if (first[i] === " ") {
+      if (first[i] === value) {
+        break;
+      } else if (first[i] === " ") {
         first[i] = value;
         break;
       }
@@ -525,12 +537,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -557,12 +583,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -571,12 +611,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRound(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -603,12 +657,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -617,12 +685,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -649,12 +731,26 @@ export default function TournamentBracket({
           <div className="bracket-pre">
             {pre.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => preClickHandler(v, i)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => preClickHandler(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -663,12 +759,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -677,12 +787,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -709,12 +833,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -723,12 +861,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -737,12 +889,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -769,12 +935,26 @@ export default function TournamentBracket({
           <div className="bracket-pre">
             {pre.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => preClickHandler(v, i)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => preClickHandler(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -783,12 +963,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -797,12 +991,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -811,12 +1019,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -843,12 +1065,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -857,12 +1093,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -871,12 +1121,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -885,12 +1149,26 @@ export default function TournamentBracket({
           <div>
             {fourthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fourthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -913,12 +1191,26 @@ export default function TournamentBracket({
           <div className="bracket-pre">
             {pre.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => preClickHandler(v, i)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => preClickHandler(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -927,12 +1219,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -941,12 +1247,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -955,12 +1275,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -969,12 +1303,26 @@ export default function TournamentBracket({
           <div>
             {fourthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fourthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -997,12 +1345,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1011,12 +1373,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1025,12 +1401,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1039,12 +1429,26 @@ export default function TournamentBracket({
           <div>
             {fourthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fourthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1053,12 +1457,26 @@ export default function TournamentBracket({
           <div>
             {fifthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fifthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fifthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1081,12 +1499,26 @@ export default function TournamentBracket({
           <div className="bracket-pre">
             {pre.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => preClickHandler(v, i)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => preClickHandler(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1095,12 +1527,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1109,12 +1555,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1123,12 +1583,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1137,12 +1611,26 @@ export default function TournamentBracket({
           <div>
             {fourthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fourthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1151,12 +1639,26 @@ export default function TournamentBracket({
           <div>
             {fifthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fifthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fifthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1179,12 +1681,26 @@ export default function TournamentBracket({
           <div className="bracket-pre">
             {pre.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => preClickHandler(v, i)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => preClickHandler(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1193,12 +1709,26 @@ export default function TournamentBracket({
           <div>
             {firstRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => firstRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => firstRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1207,12 +1737,26 @@ export default function TournamentBracket({
           <div>
             {secondRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => secondRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => secondRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1221,12 +1765,26 @@ export default function TournamentBracket({
           <div>
             {thirdRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => thirdRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => thirdRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1235,12 +1793,26 @@ export default function TournamentBracket({
           <div>
             {fourthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fourthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fourthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}
@@ -1249,12 +1821,26 @@ export default function TournamentBracket({
           <div>
             {fifthRound.map((v, i) => {
               return (
-                <div
-                  key={i}
-                  className={"bracket-single_" + i}
-                  onClick={() => fifthRoundClick(v)}
-                >
-                  {v}
+                <div key={i}>
+                  <div
+                    className={"bracket-single_" + i}
+                    onClick={() => fifthRoundClick(v, i)}
+                  >
+                    {v}
+                  </div>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="48"
+                    height="48"
+                    fill="currentColor"
+                    className={"bi bi-arrow-right" + "_" + i}
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                    />
+                  </svg>
                 </div>
               );
             })}

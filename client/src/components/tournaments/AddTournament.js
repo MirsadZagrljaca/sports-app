@@ -86,6 +86,17 @@ export default function AddTournament() {
   };
 
   const submitHandler = () => {
+    if (
+      values.game === "" ||
+      values.name === "" ||
+      values.numberOfParticipants === 0 ||
+      values.description === "" ||
+      values.time === "" ||
+      values.uniqueId === ""
+    ) {
+      return setValues({ ...values, error: "Please Fill All Input Fields!" });
+    }
+
     const dateTime = values.time.split("T");
     const date = dateTime[0].split("-");
     const time = dateTime[1].split(":");
@@ -134,21 +145,10 @@ export default function AddTournament() {
       return setValues({ ...values, error: "That Date Has Already Passed" });
     }
 
-    if (
-      values.game === "" ||
-      values.name === "" ||
-      values.numberOfParticipants === 0 ||
-      values.description === "" ||
-      values.time === "" ||
-      values.uniqueId === ""
-    ) {
-      return setValues({ ...values, error: "Please Fill All Input Fields!" });
-    }
-
-    if (values.numberOfParticipants < 1 || values.numberOfParticipants > 65) {
+    if (values.numberOfParticipants < 2 || values.numberOfParticipants > 65) {
       return setValues({
         ...values,
-        error: "Number of participants should be more then 1 and less then 65",
+        error: "Number of participants should be more then 2 and less then 65",
       });
     }
 

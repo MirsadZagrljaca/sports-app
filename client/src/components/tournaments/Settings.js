@@ -38,6 +38,8 @@ export default function Settings({ tournament, setTournament, participants }) {
     const hoursCheck = time[0] - hours;
     const minutesCheck = time[1] - minutes;
 
+    console.log(yearCheck, monthCheck, dayCheck, hoursCheck, minutesCheck);
+
     if (yearCheck < 0) {
       return setDisabled(true);
     }
@@ -65,6 +67,16 @@ export default function Settings({ tournament, setTournament, participants }) {
       dayCheck === 0 &&
       hoursCheck === 0 &&
       minutesCheck < 0
+    ) {
+      return setDisabled(true);
+    }
+
+    if (
+      yearCheck === 0 &&
+      monthCheck === 0 &&
+      dayCheck === 0 &&
+      hoursCheck === 0 &&
+      minutesCheck === 0
     ) {
       return setDisabled(true);
     }
@@ -122,12 +134,12 @@ export default function Settings({ tournament, setTournament, participants }) {
     }
 
     if (
-      (values.numberOfParticipants !== 0 && values.numberOfParticipants < 1) ||
+      (values.numberOfParticipants !== 0 && values.numberOfParticipants < 2) ||
       values.numberOfParticipants > 65
     ) {
       return setValues({
         ...values,
-        error: "Number of participants should be more then 1 and less then 65",
+        error: "Number of participants should be more then 2 and less then 65",
       });
     }
 
@@ -149,6 +161,7 @@ export default function Settings({ tournament, setTournament, participants }) {
           setValues({ ...values, error: response.data.error });
         } else {
           setTournament(response.data);
+          window.location.reload();
         }
       });
   };
@@ -236,10 +249,9 @@ export default function Settings({ tournament, setTournament, participants }) {
             <input
               type="number"
               className="form-control"
-              min={16}
-              max={42}
+              min={3}
+              max={64}
               defaultValue={tournament.numberOfParticipants}
-              disabled={disabled}
               onChange={(e) =>
                 setValues({ ...values, numberOfParticipants: e.target.value })
               }
@@ -268,6 +280,7 @@ export default function Settings({ tournament, setTournament, participants }) {
               type="button"
               className="btn btn-primary btn-lg btn-block"
               onClick={update}
+              disabled={disabled}
             >
               Save Changes
             </button>

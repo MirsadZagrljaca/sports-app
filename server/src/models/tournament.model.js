@@ -15,6 +15,7 @@ const TournamentSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: "Tournament URL is required",
+    unique: "Tournament URL must be unique!",
   },
   description: {
     type: String,

@@ -2,14 +2,9 @@ const getUniqueErrorMessage = (err) => {
   let output;
 
   try {
-    let fieldName = err.message.substring(
-      err.message.lastIndexOf(".$") + 2,
-      err.message.lastIndexOf("_1")
-    );
-    output =
-      fieldName.charAt(0).toUpperCase() +
-      fieldName.slice(1) +
-      " already exists";
+    let message = err.message.split(":")[3];
+    let temp = message.split("{");
+    output = "That" + temp + " is already in use";
   } catch (ex) {
     output = "Unique field already exists";
   }
